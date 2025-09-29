@@ -1,8 +1,11 @@
+langchain-community
+langchain-core
+langchain-huggingface
+langchain-pinecone
 langchain
-flask
 sentence-transformers
 pypdf
+pinecone-client
 python-dotenv
-langchain-pinecone
-langchain-openai
-langchain-community
+torch
+accelerate
