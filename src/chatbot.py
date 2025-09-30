@@ -1,14 +1,12 @@
 import os
-from langchain.memory import ChatMessageHistory
 from langchain_core.runnables import RunnableWithMessageHistory
-from src.preprocessing import filter_to_minimal_docs, split_documents
-from src.embeddings import get_embeddings
-from src.vectorstore import init_vector_store, get_retriever
-from src.rag_chain import build_rag_chain
-from src.config import DATA_PATH, INDEX_NAME, CHUNK_SIZE, CHUNK_OVERLAP, RETRIEVER_K, GROQ_API_KEY
-from src.loaders import load_pdf_files
-
-
+from .preprocessing import filter_to_minimal_docs, split_documents
+from .embeddings import get_embeddings
+from .vectorstore import init_vector_store, get_retriever
+from .rag_chain import build_rag_chain
+from .config import DATA_PATH, INDEX_NAME, CHUNK_SIZE, CHUNK_OVERLAP, RETRIEVER_K, GROQ_API_KEY
+from .loaders import load_pdf_files
+from langchain_community.chat_message_histories import ChatMessageHistory
 
 def create_chatbot_pipeline(data_path: str = DATA_PATH, index_name: str = INDEX_NAME, session_history=None):
     """Create and return (chatbot_runnable, retriever) so callers can invoke."""
